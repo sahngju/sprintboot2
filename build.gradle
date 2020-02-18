@@ -1,6 +1,7 @@
 buildscript{
     ext {
         springBootVersion = '2.1.7.RELEASE'
+        lombokVersion = '1.18.8'
     }
     repositories {
         mavenCentral()
@@ -26,5 +27,9 @@ repositories {
 }
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
